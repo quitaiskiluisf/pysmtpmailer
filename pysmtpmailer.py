@@ -136,7 +136,7 @@ def send_mail(smtp_server_address, smtp_server_port, smtp_server_username,
         msg.set_content(message)
 
     for file_name, file_mimetype, file_content in attachment:
-        if '/' not in file_mimetype:
+        if file_mimetype == None or '/' not in file_mimetype:
             file_mimetype = 'application/octet-stream'
 
         main_type, subtype = file_mimetype.split('/', maxsplit=1)
