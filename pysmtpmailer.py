@@ -27,10 +27,10 @@ def parse_args():
                    help='SMTP server port. Default: 25.',
     )
     p.add_argument('-U', '--smtp-server-username', default='',
-                   help='Username supplied to the smtp server. Default: empty.',
+                   help='Username supplied to the SMTP server. Default: empty.',
     )
     p.add_argument('-P', '--smtp-server-password', default='',
-                   help='Password supplied to the smtp server. Default: empty\
+                   help='Password supplied to the SMTP server. Default: empty\
                          Note: if both username and password arguments are \
                          empty, no credentials will be sent to the server.',
     )
