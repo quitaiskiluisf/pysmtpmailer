@@ -21,13 +21,13 @@ def parse_args():
     p.add_argument('--version', action='version', version='%(prog)s DEV', )
     p.add_argument('-S', '--smtp-server-address', default='localhost',
                    help='SMTP server to use for sending the message. Default: \
-                         localhost',
+                         localhost.',
     )
     p.add_argument('-p', '--smtp-server-port', type=int, default=25,
-                   help='SMTP server port. Default: 25',
+                   help='SMTP server port. Default: 25.',
     )
     p.add_argument('-U', '--smtp-server-username', default='',
-                   help='Username supplied to the smtp server. Default: empty',
+                   help='Username supplied to the smtp server. Default: empty.',
     )
     p.add_argument('-P', '--smtp-server-password', default='',
                    help='Password supplied to the smtp server. Default: empty\
@@ -35,36 +35,34 @@ def parse_args():
                          empty, no credentials will be sent to the server.',
     )
     p.add_argument('-f', '--from-address', default='',
-                   help='The address which will be set on the mail header. \
-                         Default: empty',
+                   help='The address which will be set on the mail "From: " \
+                         header. Default: empty.',
     )
     p.add_argument('-t', '--to-address', required=True, nargs='*',
                    metavar='MAIL_ADDRESS', default=[],
-                   help='The address which the message will be sent to. It may \
-                         be supplied multiple times for sending the message to \
-                         multiple destinations.',
+                   help='The address which the message will be sent to. More \
+                         than one address may be supplied.',
     )
     p.add_argument('-c', '--cc-address', nargs='*', metavar='MAIL_ADDRESS',
                    default=[],
-                   help='Carbon copy destinations. It may be specified \
-                         multiple times for sending the message to multiple \
-                         destinations.',
+                   help='Carbon copy destinations. Multiple addresses may be \
+                         specified.',
     )
     p.add_argument('-b', '--bcc-address', nargs='*', metavar='MAIL_ADDRESS',
                    default=[],
-                   help='Blind carbon copy destinations. It may be specified \
-                         multiple times for sending the message to multiple \
-                         destinations.',
+                   help='Blind carbon copy destinations. Multiple addresses \
+                         may be specified.',
     )
     p.add_argument('-s', '--subject', default=None,
-                   help='Subject of the message. By default, the first line \
-                         of the message is regarded as the subject. Setting \
-                         this argument ensures that everything specified on \
-                         the body is effectively sent in the body of the \
-                         message',
+                   help='Subject of the message. By default, the first line of \
+                         the message is regarded as the subject. Setting this \
+                         argument ensures that everything specified on the \
+                         body is effectively sent in the body of the message.',
     )
     p.add_argument('-m', '--message', default=None,
-                   help='Body of the message',
+                   help='Body of the message.\
+                         Note: at least the subject or the message must be \
+                         supplied.',
     )
     p.add_argument('-a', '--attachment', nargs='*', metavar='FILE', default=[],
                    help='Files which must be sent as attachments to the \
