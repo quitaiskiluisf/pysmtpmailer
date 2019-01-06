@@ -18,7 +18,7 @@ def parse_args():
        of the options set by the user.'''
     description = 'SMTP client for sending e-mails from the command-line'
     p = argparse.ArgumentParser(description=description, )
-    p.add_argument('--version', action='version', version='%(prog)s 1.0.0', )
+    p.add_argument('--version', action='version', version='%(prog)s 1.0.1', )
     p.add_argument('-S', '--smtp-server-address', default='localhost',
                    help='SMTP server to use for sending the message. Default: \
                          localhost.',
@@ -136,7 +136,7 @@ def send_mail(smtp_server_address, smtp_server_port, smtp_server_username,
         msg.set_content(message)
 
     for file_name, file_mimetype, file_content in attachment:
-        if '/' not in file_mimetype:
+        if file_mimetype == None or '/' not in file_mimetype:
             file_mimetype = 'application/octet-stream'
 
         main_type, subtype = file_mimetype.split('/', maxsplit=1)
